@@ -6,90 +6,117 @@
 <title>Happy Valentine ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    height: 100vh;
-    overflow-x: hidden;
-    color: white;
+body{
+  font-family:'Segoe UI',sans-serif;
+  color:white;
+  overflow-x:hidden;
 }
 
 /* Background video */
-video.bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+video.bg{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  z-index:-1;
 }
 
 /* Overlay */
-.overlay {
-    background: rgba(0,0,0,0.5);
-    min-height: 100vh;
+.overlay{
+  background:rgba(0,0,0,0.55);
 }
 
 /* Sections */
-.section {
-    min-height: 100vh;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.section{
+  min-height:100vh;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-/* Name reveal */
-.name {
-    font-size: 38px;
-    font-weight: bold;
-    animation: glow 2s infinite alternate;
+/* Name glow */
+.name{
+  font-size:38px;
+  font-weight:bold;
+  animation:glow 2s infinite alternate;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #ff4d6d; }
-    to { text-shadow: 0 0 25px #ffb3c1; }
-}
-
-/* Scroll hint */
-.scroll {
-    margin-top: 30px;
-    font-size: 16px;
-    opacity: 0.8;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff4d6d;}
+  to{text-shadow:0 0 25px #ffb3c1;}
 }
 
 /* Card */
-.card {
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
-    padding: 25px;
-    border-radius: 20px;
-    max-width: 600px;
-    animation: fadeUp 1.5s ease;
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+  padding:25px;
+  border-radius:20px;
+  max-width:600px;
+  animation:fadeUp 1.5s ease;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.7;
+p{
+  font-size:18px;
+  line-height:1.7;
+}
+
+/* Scroll hint */
+.scroll{
+  margin-top:25px;
+  opacity:0.8;
+  animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(10px);}
+}
+
+/* Popup */
+.popup{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.75);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.popup-content{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  animation:pop 0.8s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.7);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+.popup button{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff4d6d;
+  color:white;
+  font-size:16px;
 }
 </style>
 </head>
@@ -103,61 +130,66 @@ p {
 
 <div class="overlay">
 
-<!-- SECTION 1 : Name Reveal -->
+<!-- Section 1 -->
 <div class="section">
-    <div class="name">HER_NAME_HERE ❤️</div>
-    <p style="margin-top:15px;">माझ्या आयुष्यातील सर्वात सुंदर नाव…</p>
-    <div class="scroll">⬇ Scroll to continue</div>
+  <div class="name">HER_NAME_HERE ❤️</div>
+  <p style="margin-top:15px;">माझ्या आयुष्यातील सर्वात सुंदर नाव…</p>
+  <div class="scroll">⬇ Scroll to continue</div>
 </div>
 
-<!-- SECTION 2 : Story -->
+<!-- Section 2 -->
 <div class="section">
-    <div class="card">
-        <p>
-        तू जेव्हा माझ्या आयुष्यात आलीस,<br>
-        तेव्हापासून प्रत्येक गोष्ट खास वाटू लागली.<br><br>
-
-        तुझं हसणं, तुझं बोलणं,<br>
-        आणि तुझी साधीशी उपस्थिती सुद्धा<br>
-        माझ्यासाठी खूप मोलाची आहे.
-        </p>
-    </div>
-    <div class="scroll">⬇ Scroll to continue</div>
+  <div class="card">
+    <p>
+      तू माझ्या आयुष्यात आलीस,<br>
+      आणि सगळंच बदलून गेलं.<br><br>
+      तुझं हसणं,<br>
+      तुझी साधीशी उपस्थिती,<br>
+      माझ्यासाठी सगळ्यात खास आहे.
+    </p>
+  </div>
+  <div class="scroll">⬇ Scroll to continue</div>
 </div>
 
-<!-- SECTION 3 : Feelings -->
+<!-- Section 3 -->
 <div class="section">
-    <div class="card">
-        <p>
-        प्रेम म्हणजे काय हे मला तुझ्यामुळे कळलं.<br><br>
-
-        तू माझा शांतपणा आहेस,<br>
-        माझी ताकद आहेस,<br>
-        आणि माझं नेहमीचं "हो" आहेस ❤️
-        </p>
-    </div>
-    <div class="scroll">⬇ Scroll to continue</div>
-</div>
-
-<!-- SECTION 4 : Ending -->
-<div class="section">
-    <div class="card">
-        <p>
-        आज व्हॅलेंटाईन डे असो किंवा साधा दिवस,<br>
-        माझं मन नेहमी तुझंच नाव घेईल.<br><br>
-
-        Happy Valentine’s Day ❤️<br>
-        कायम तुझाच…
-        </p>
-
-        <p style="margin-top:15px;">
-        — <b>Sadanand</b>
-        </p>
-    </div>
+  <div class="card">
+    <p>
+      प्रेम म्हणजे काय,<br>
+      हे मला तुझ्यामुळे कळलं.<br><br>
+      तू माझा शांतपणा आहेस,<br>
+      आणि माझं कायमचं "हो" आहेस ❤️
+    </p>
+  </div>
 </div>
 
 </div>
+
+<!-- FINAL POPUP -->
+<div id="lovePopup" class="popup">
+  <div class="popup-content">
+    <h2>💖 एक शेवटचं सांगायचं होतं…</h2>
+    <p>
+      माझं आज,<br>
+      माझं उद्या,<br>
+      आणि माझं कायमचं "आपण"<br>
+      फक्त तुझ्याबरोबर ❤️
+    </p>
+    <button onclick="closePopup()">Close 💕</button>
+  </div>
+</div>
+
+<script>
+window.addEventListener("scroll",function(){
+  if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 50){
+    document.getElementById("lovePopup").style.display="flex";
+  }
+});
+
+function closePopup(){
+  document.getElementById("lovePopup").style.display="none";
+}
+</script>
 
 </body>
 </html>
-
