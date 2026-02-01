@@ -1,70 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Valentine ❤️</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+    height: 100vh;
+    overflow-x: hidden;
     color: white;
-    text-align: center;
+}
+
+/* Background video */
+video.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0,0,0,0.5);
+    min-height: 100vh;
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.heart {
-    font-size: 60px;
-    animation: beat 1s infinite;
+/* Name reveal */
+.name {
+    font-size: 38px;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
 }
 
-@keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff4d6d; }
+    to { text-shadow: 0 0 25px #ffb3c1; }
 }
 
+/* Scroll hint */
+.scroll {
+    margin-top: 30px;
+    font-size: 16px;
+    opacity: 0.8;
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Card */
 .card {
     background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
     padding: 25px;
     border-radius: 20px;
-    margin-top: 30px;
+    max-width: 600px;
+    animation: fadeUp 1.5s ease;
 }
 
-h1 {
-    font-size: 28px;
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 </style>
 </head>
 
 <body>
 
-<div class="heart">❤️</div>
+<!-- Background video -->
+<video class="bg" autoplay muted loop playsinline>
+  <source src="https://cdn.pixabay.com/video/2023/02/14/150498-799424626_large.mp4" type="video/mp4">
+</video>
 
-<h1>Happy Valentine’s Day</h1>
+<div class="overlay">
 
-<div class="card">
-<p>
-From the moment you came into my life,<br>
-everything felt warmer and brighter.<br><br>
+<!-- SECTION 1 : Name Reveal -->
+<div class="section">
+    <div class="name">HER_NAME_HERE ❤️</div>
+    <p style="margin-top:15px;">माझ्या आयुष्यातील सर्वात सुंदर नाव…</p>
+    <div class="scroll">⬇ Scroll to continue</div>
+</div>
 
-You are not just my love,<br>
-you are my peace, my smile, my safe place.<br><br>
+<!-- SECTION 2 : Story -->
+<div class="section">
+    <div class="card">
+        <p>
+        तू जेव्हा माझ्या आयुष्यात आलीस,<br>
+        तेव्हापासून प्रत्येक गोष्ट खास वाटू लागली.<br><br>
 
-Thank you for being you.<br>
-I choose you — today and always ❤️
-</p>
+        तुझं हसणं, तुझं बोलणं,<br>
+        आणि तुझी साधीशी उपस्थिती सुद्धा<br>
+        माझ्यासाठी खूप मोलाची आहे.
+        </p>
+    </div>
+    <div class="scroll">⬇ Scroll to continue</div>
+</div>
 
-<p style="margin-top:20px;">
-— Yours, <b>Sadanand</b>
-</p>
+<!-- SECTION 3 : Feelings -->
+<div class="section">
+    <div class="card">
+        <p>
+        प्रेम म्हणजे काय हे मला तुझ्यामुळे कळलं.<br><br>
+
+        तू माझा शांतपणा आहेस,<br>
+        माझी ताकद आहेस,<br>
+        आणि माझं नेहमीचं "हो" आहेस ❤️
+        </p>
+    </div>
+    <div class="scroll">⬇ Scroll to continue</div>
+</div>
+
+<!-- SECTION 4 : Ending -->
+<div class="section">
+    <div class="card">
+        <p>
+        आज व्हॅलेंटाईन डे असो किंवा साधा दिवस,<br>
+        माझं मन नेहमी तुझंच नाव घेईल.<br><br>
+
+        Happy Valentine’s Day ❤️<br>
+        कायम तुझाच…
+        </p>
+
+        <p style="margin-top:15px;">
+        — <b>Sadanand</b>
+        </p>
+    </div>
+</div>
+
 </div>
 
 </body>
 </html>
+
