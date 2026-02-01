@@ -6,19 +6,25 @@
 <title>Happy Valentine ❤️</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
   font-family:'Segoe UI',sans-serif;
+  height:100vh;
   color:white;
-  overflow-x:hidden;
+  overflow:hidden;
 }
 
 /* Background video */
 video.bg{
   position:fixed;
   top:0;left:0;
-  width:100%;height:100%;
+  width:100%;
+  height:100%;
   object-fit:cover;
   z-index:-1;
 }
@@ -26,23 +32,34 @@ video.bg{
 /* Overlay */
 .overlay{
   background:rgba(0,0,0,0.55);
-}
-
-/* Sections */
-.section{
-  min-height:100vh;
-  padding:30px;
+  height:100vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
+  padding:20px;
+}
+
+/* Card */
+.card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  padding:30px;
+  border-radius:25px;
+  max-width:600px;
+  animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:scale(0.9);}
+  to{opacity:1;transform:scale(1);}
 }
 
 /* Name glow */
 .name{
-  font-size:38px;
+  font-size:36px;
   font-weight:bold;
+  margin-bottom:10px;
   animation:glow 2s infinite alternate;
 }
 
@@ -51,143 +68,66 @@ video.bg{
   to{text-shadow:0 0 25px #ffb3c1;}
 }
 
-/* Card */
-.card{
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(8px);
-  padding:25px;
-  border-radius:20px;
-  max-width:600px;
-  animation:fadeUp 1.5s ease;
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
 p{
   font-size:18px;
   line-height:1.7;
+  margin-top:12px;
 }
 
-/* Scroll hint */
-.scroll{
-  margin-top:25px;
-  opacity:0.8;
-  animation:bounce 1.5s infinite;
-}
-
-@keyframes bounce{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(10px);}
-}
-
-/* Popup */
-.popup{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.75);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-}
-
-.popup-content{
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(10px);
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  animation:pop 0.8s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(0.7);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-
-.popup button{
+/* Music button */
+.music-btn{
   margin-top:20px;
-  padding:10px 25px;
+  padding:10px 22px;
   border:none;
   border-radius:25px;
   background:#ff4d6d;
   color:white;
-  font-size:16px;
+  font-size:15px;
+  box-shadow:0 0 15px rgba(255,77,109,0.8);
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background video -->
+<!-- Background Video -->
 <video class="bg" autoplay muted loop playsinline>
   <source src="https://cdn.pixabay.com/video/2023/02/14/150498-799424626_large.mp4" type="video/mp4">
 </video>
 
 <div class="overlay">
-
-<!-- Section 1 -->
-<div class="section">
-  <div class="name">HER_NAME_HERE ❤️</div>
-  <p style="margin-top:15px;">माझ्या आयुष्यातील सर्वात सुंदर नाव…</p>
-  <div class="scroll">⬇ Scroll to continue</div>
-</div>
-
-<!-- Section 2 -->
-<div class="section">
   <div class="card">
+
+    <div class="name">HER_NAME_HERE ❤️</div>
+
     <p>
       तू माझ्या आयुष्यात आलीस,<br>
-      आणि सगळंच बदलून गेलं.<br><br>
-      तुझं हसणं,<br>
-      तुझी साधीशी उपस्थिती,<br>
-      माझ्यासाठी सगळ्यात खास आहे.
-    </p>
-  </div>
-  <div class="scroll">⬇ Scroll to continue</div>
-</div>
+      आणि प्रत्येक क्षण सुंदर झाला.<br><br>
 
-<!-- Section 3 -->
-<div class="section">
-  <div class="card">
-    <p>
-      प्रेम म्हणजे काय,<br>
-      हे मला तुझ्यामुळे कळलं.<br><br>
-      तू माझा शांतपणा आहेस,<br>
-      आणि माझं कायमचं "हो" आहेस ❤️
+      तुझं हसणं माझा आनंद आहे,<br>
+      तुझी साथ माझी ताकद आहे.<br><br>
+
+      आज व्हॅलेंटाईन असो किंवा कोणताही दिवस,<br>
+      माझं मन कायम तुझंच नाव घेईल ❤️
     </p>
+
+    <p style="margin-top:15px;">
+      — कायम तुझाच,<br><b>Sadanand</b>
+    </p>
+
+    <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
+
   </div>
 </div>
 
-</div>
-
-<!-- FINAL POPUP -->
-<div id="lovePopup" class="popup">
-  <div class="popup-content">
-    <h2>💖 एक शेवटचं सांगायचं होतं…</h2>
-    <p>
-      माझं आज,<br>
-      माझं उद्या,<br>
-      आणि माझं कायमचं "आपण"<br>
-      फक्त तुझ्याबरोबर ❤️
-    </p>
-    <button onclick="closePopup()">Close 💕</button>
-  </div>
-</div>
+<!-- Background Music -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_4c2dfb2d91.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-window.addEventListener("scroll",function(){
-  if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 50){
-    document.getElementById("lovePopup").style.display="flex";
-  }
-});
-
-function closePopup(){
-  document.getElementById("lovePopup").style.display="none";
+function playMusic(){
+  document.getElementById("music").play();
 }
 </script>
 
