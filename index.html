@@ -11,32 +11,28 @@
 body{
   height:100vh;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#ffe6ef,#fff9fb);
   overflow:hidden;
-  position:relative;
+  color:white;
 }
 
-/* Decorative background circles */
-.bg-circle{
-  position:absolute;
-  border-radius:50%;
-  opacity:0.25;
+/* Background romantic video */
+video.bg{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
 }
-.c1{width:200px;height:200px;background:#ffb3c6;top:-50px;left:-50px;}
-.c2{width:150px;height:150px;background:#ffc8dd;bottom:-40px;right:-40px;}
-.c3{width:100px;height:100px;background:#ffafcc;top:30%;right:-30px;}
 
-/* Floating hearts */
-.heart{
-  position:absolute;
-  font-size:18px;
-  color:#ff5d8f;
-  animation:float 6s infinite ease-in;
-}
-@keyframes float{
-  0%{transform:translateY(100vh);opacity:0;}
-  50%{opacity:0.8;}
-  100%{transform:translateY(-10vh);opacity:0;}
+/* Dark overlay */
+.overlay{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+  z-index:-1;
 }
 
 /* Center container */
@@ -48,103 +44,98 @@ body{
   padding:20px;
 }
 
-/* Main card */
+/* Polaroid card */
 .card{
-  background:white;
+  background:#fff;
+  color:#444;
+  border-radius:20px;
+  padding:18px;
+  max-width:420px;
   width:100%;
-  max-width:460px;
-  padding:30px;
-  border-radius:25px;
+  box-shadow:0 25px 50px rgba(0,0,0,0.4);
   text-align:center;
-  box-shadow:0 20px 40px rgba(255,120,160,0.3);
-  animation:fadeIn 1.5s ease;
+  animation:fadeIn 1.8s ease;
 }
+
 @keyframes fadeIn{
-  from{opacity:0;transform:scale(0.95);}
+  from{opacity:0;transform:scale(0.9);}
   to{opacity:1;transform:scale(1);}
+}
+
+/* Romantic image */
+.photo{
+  width:100%;
+  height:220px;
+  border-radius:15px;
+  background-image:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');
+  background-size:cover;
+  background-position:center;
+  margin-bottom:15px;
 }
 
 /* Name */
 .name{
-  font-size:30px;
-  color:#ff4d7a;
+  font-size:26px;
+  color:#ff4d6d;
   font-weight:bold;
-}
-
-/* Divider hearts */
-.divider{
-  margin:12px 0;
-  color:#ff7fa3;
-  font-size:18px;
 }
 
 /* Quotes */
 .quote{
   font-size:15.5px;
-  color:#555;
   margin:10px 0;
   line-height:1.6;
 }
 
 /* Footer */
 .footer{
-  margin-top:15px;
+  margin-top:12px;
   font-size:14px;
-  color:#777;
+  color:#666;
 }
 
 /* Music button */
 button{
-  margin-top:15px;
-  padding:10px 20px;
+  margin-top:12px;
+  padding:9px 18px;
   border:none;
   border-radius:20px;
-  background:#ff7fa3;
+  background:#ff4d6d;
   color:white;
-  font-size:15px;
-  box-shadow:0 8px 20px rgba(255,120,160,0.4);
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Decorative elements -->
-<div class="bg-circle c1"></div>
-<div class="bg-circle c2"></div>
-<div class="bg-circle c3"></div>
+<!-- Romantic background video -->
+<video class="bg" autoplay muted loop playsinline>
+  <source src="https://cdn.pixabay.com/video/2023/02/14/150498-799424626_large.mp4" type="video/mp4">
+</video>
 
-<!-- Floating hearts -->
-<span class="heart" style="left:15%;animation-delay:0s;">❤️</span>
-<span class="heart" style="left:35%;animation-delay:2s;">💗</span>
-<span class="heart" style="left:55%;animation-delay:4s;">❤️</span>
-<span class="heart" style="left:75%;animation-delay:1s;">💖</span>
+<div class="overlay"></div>
 
 <div class="container">
   <div class="card">
 
+    <div class="photo"></div>
+
     <div class="name">HER_NAME_HERE ❤️</div>
 
-    <div class="divider">❤ ❤ ❤</div>
-
     <div class="quote">
-      प्रेम म्हणजे रोज व्यक्त होणं नाही,<br>
-      तर रोज मनात खोलवर असणं.
+      काही क्षण शब्दांपेक्षा सुंदर असतात,<br>
+      आणि तू त्यातलीच एक आहेस.
     </div>
 
     <div class="quote">
-      तू जवळ असलीस की,<br>
-      प्रत्येक गोष्ट आपोआप सोपी वाटते.
+      तुझ्या एका नजरेत,<br>
+      माझं पूर्ण आयुष्य सामावलेलं आहे.
     </div>
 
     <div class="quote">
-      तुझ्या हास्यामध्ये,<br>
-      माझं अख्खं विश्व सामावलेलं आहे.
-    </div>
-
-    <div class="quote">
-      आज व्हॅलेंटाईन डे आहे म्हणून नाही,<br>
-      तू आहेस म्हणून प्रत्येक दिवस सुंदर आहे ❤️
+      आज व्हॅलेंटाईन आहे म्हणून नाही,<br>
+      तू आहेस म्हणून प्रेम आहे ❤️
     </div>
 
     <div class="footer">
@@ -156,176 +147,7 @@ button{
   </div>
 </div>
 
-<audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/11/14/audio_5b1d8c8e3a.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-function playMusic(){
-  document.getElementById("music").play();
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="mr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine ❤️</title>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  height:100vh;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#ffe6ef,#fff9fb);
-  overflow:hidden;
-  position:relative;
-}
-
-/* Decorative background circles */
-.bg-circle{
-  position:absolute;
-  border-radius:50%;
-  opacity:0.25;
-}
-.c1{width:200px;height:200px;background:#ffb3c6;top:-50px;left:-50px;}
-.c2{width:150px;height:150px;background:#ffc8dd;bottom:-40px;right:-40px;}
-.c3{width:100px;height:100px;background:#ffafcc;top:30%;right:-30px;}
-
-/* Floating hearts */
-.heart{
-  position:absolute;
-  font-size:18px;
-  color:#ff5d8f;
-  animation:float 6s infinite ease-in;
-}
-@keyframes float{
-  0%{transform:translateY(100vh);opacity:0;}
-  50%{opacity:0.8;}
-  100%{transform:translateY(-10vh);opacity:0;}
-}
-
-/* Center container */
-.container{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-/* Main card */
-.card{
-  background:white;
-  width:100%;
-  max-width:460px;
-  padding:30px;
-  border-radius:25px;
-  text-align:center;
-  box-shadow:0 20px 40px rgba(255,120,160,0.3);
-  animation:fadeIn 1.5s ease;
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:scale(0.95);}
-  to{opacity:1;transform:scale(1);}
-}
-
-/* Name */
-.name{
-  font-size:30px;
-  color:#ff4d7a;
-  font-weight:bold;
-}
-
-/* Divider hearts */
-.divider{
-  margin:12px 0;
-  color:#ff7fa3;
-  font-size:18px;
-}
-
-/* Quotes */
-.quote{
-  font-size:15.5px;
-  color:#555;
-  margin:10px 0;
-  line-height:1.6;
-}
-
-/* Footer */
-.footer{
-  margin-top:15px;
-  font-size:14px;
-  color:#777;
-}
-
-/* Music button */
-button{
-  margin-top:15px;
-  padding:10px 20px;
-  border:none;
-  border-radius:20px;
-  background:#ff7fa3;
-  color:white;
-  font-size:15px;
-  box-shadow:0 8px 20px rgba(255,120,160,0.4);
-}
-</style>
-</head>
-
-<body>
-
-<!-- Decorative elements -->
-<div class="bg-circle c1"></div>
-<div class="bg-circle c2"></div>
-<div class="bg-circle c3"></div>
-
-<!-- Floating hearts -->
-<span class="heart" style="left:15%;animation-delay:0s;">❤️</span>
-<span class="heart" style="left:35%;animation-delay:2s;">💗</span>
-<span class="heart" style="left:55%;animation-delay:4s;">❤️</span>
-<span class="heart" style="left:75%;animation-delay:1s;">💖</span>
-
-<div class="container">
-  <div class="card">
-
-    <div class="name">HER_NAME_HERE ❤️</div>
-
-    <div class="divider">❤ ❤ ❤</div>
-
-    <div class="quote">
-      प्रेम म्हणजे रोज व्यक्त होणं नाही,<br>
-      तर रोज मनात खोलवर असणं.
-    </div>
-
-    <div class="quote">
-      तू जवळ असलीस की,<br>
-      प्रत्येक गोष्ट आपोआप सोपी वाटते.
-    </div>
-
-    <div class="quote">
-      तुझ्या हास्यामध्ये,<br>
-      माझं अख्खं विश्व सामावलेलं आहे.
-    </div>
-
-    <div class="quote">
-      आज व्हॅलेंटाईन डे आहे म्हणून नाही,<br>
-      तू आहेस म्हणून प्रत्येक दिवस सुंदर आहे ❤️
-    </div>
-
-    <div class="footer">
-      कायम तुझाच,<br><b>Sadanand</b>
-    </div>
-
-    <button onclick="playMusic()">🎵 Play Music</button>
-
-  </div>
-</div>
-
+<!-- Background music -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2022/11/14/audio_5b1d8c8e3a.mp3" type="audio/mpeg">
 </audio>
