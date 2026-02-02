@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine ❤️</title>
+<title>Valentine ❤️</title>
 
 <style>
 *{
@@ -13,25 +13,28 @@
 }
 
 body{
-  font-family:'Segoe UI',sans-serif;
   height:100vh;
-  color:white;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ffe6eb,#fff5f7);
   overflow:hidden;
 }
 
-/* Background video */
-video.bg{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-1;
+/* Floating hearts */
+.heart{
+  position:absolute;
+  color:#ff7a9e;
+  animation:float 6s infinite ease-in;
+  font-size:20px;
 }
 
-/* Overlay */
-.overlay{
-  background:rgba(0,0,0,0.55);
+@keyframes float{
+  0%{transform:translateY(100vh);opacity:0;}
+  50%{opacity:0.8;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* Main container */
+.container{
   height:100vh;
   display:flex;
   justify-content:center;
@@ -42,87 +45,117 @@ video.bg{
 
 /* Card */
 .card{
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(10px);
+  background:white;
+  border-radius:30px;
   padding:30px;
-  border-radius:25px;
-  max-width:600px;
+  max-width:700px;
+  box-shadow:0 20px 40px rgba(255,122,158,0.25);
   animation:fadeIn 2s ease;
 }
 
 @keyframes fadeIn{
-  from{opacity:0;transform:scale(0.9);}
+  from{opacity:0;transform:scale(0.95);}
   to{opacity:1;transform:scale(1);}
 }
 
-/* Name glow */
+/* Name */
 .name{
-  font-size:36px;
+  font-size:34px;
+  color:#ff4f7b;
   font-weight:bold;
   margin-bottom:10px;
-  animation:glow 2s infinite alternate;
 }
 
-@keyframes glow{
-  from{text-shadow:0 0 10px #ff4d6d;}
-  to{text-shadow:0 0 25px #ffb3c1;}
+/* Divider */
+.line{
+  width:80px;
+  height:3px;
+  background:#ff7a9e;
+  margin:12px auto;
+  border-radius:10px;
 }
 
-p{
-  font-size:18px;
-  line-height:1.7;
-  margin-top:12px;
+/* Quotes */
+.quote{
+  font-size:17px;
+  color:#555;
+  margin:10px 0;
+  line-height:1.6;
+}
+
+/* Footer */
+.footer{
+  margin-top:15px;
+  font-size:15px;
+  color:#888;
 }
 
 /* Music button */
 .music-btn{
-  margin-top:20px;
+  margin-top:15px;
   padding:10px 22px;
   border:none;
   border-radius:25px;
-  background:#ff4d6d;
+  background:#ff7a9e;
   color:white;
   font-size:15px;
-  box-shadow:0 0 15px rgba(255,77,109,0.8);
+  box-shadow:0 8px 20px rgba(255,122,158,0.4);
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background Video -->
-<video class="bg" autoplay muted loop playsinline>
-  <source src="https://cdn.pixabay.com/video/2023/02/14/150498-799424626_large.mp4" type="video/mp4">
-</video>
+<!-- Floating hearts -->
+<span class="heart" style="left:10%;animation-delay:0s;">❤️</span>
+<span class="heart" style="left:30%;animation-delay:2s;">💗</span>
+<span class="heart" style="left:50%;animation-delay:4s;">❤️</span>
+<span class="heart" style="left:70%;animation-delay:1s;">💖</span>
+<span class="heart" style="left:90%;animation-delay:3s;">❤️</span>
 
-<div class="overlay">
+<div class="container">
   <div class="card">
 
-    <div class="name">HER_NAME_HERE ❤️</div>
+    <div class="name">neha</div>
+    <div class="line"></div>
 
-    <p>
-      तू माझ्या आयुष्यात आलीस,<br>
-      आणि प्रत्येक क्षण सुंदर झाला.<br><br>
+    <div class="quote">
+      काही नात्यांना नाव द्यावं लागत नाही,<br>
+      ती आपोआपच मनात घर करतात.
+    </div>
 
-      तुझं हसणं माझा आनंद आहे,<br>
-      तुझी साथ माझी ताकद आहे.<br><br>
+    <div class="quote">
+      तू जवळ असलीस की,<br>
+      आयुष्य जरा जास्तच सुंदर वाटतं.
+    </div>
 
-      आज व्हॅलेंटाईन असो किंवा कोणताही दिवस,<br>
-      माझं मन कायम तुझंच नाव घेईल ❤️
-    </p>
+    <div class="quote">
+      प्रेम म्हणजे रोज बोलणं नाही,<br>
+      प्रेम म्हणजे रोज मनात असणं.
+    </div>
 
-    <p style="margin-top:15px;">
-      — कायम तुझाच,<br><b>Sadanand</b>
-    </p>
+    <div class="quote">
+      तुझ्या एका हास्यामध्ये,<br>
+      माझ्या हजार चिंता विरघळून जातात.
+    </div>
 
-    <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
+    <div class="quote">
+      आज व्हॅलेंटाईन डे आहे म्हणून नाही,<br>
+      तर तू आहेस म्हणून प्रत्येक दिवस खास आहे ❤️
+    </div>
+
+    <div class="footer">
+      कायम तुझाच,<br><b>Sadanand</b>
+    </div>
+
+    <button class="music-btn" onclick="playMusic()">🎵 Play Song</button>
 
   </div>
 </div>
 
-<!-- Background Music -->
+<!-- Background music -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/audio/2022/10/25/audio_4c2dfb2d91.mp3" type="audio/mpeg">
+  <source src="https://cdn.pixabay.com/audio/2022/11/14/audio_5b1d8c8e3a.mp3" type="audio/mpeg">
 </audio>
 
 <script>
